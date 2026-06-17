@@ -1,2 +1,3 @@
 # GROUP 9 PROJECT - UTM Facility Booking System, FBS
 
+Throughout multiple semesters, facilities being down have been issues and causing a lot of problems to user of UTM. So, our group are dedicated in improving efficiencies and time saving from users in UTM. This system allows members to book facilities with complete details, such as whether a facility is available, unavailable or under maintenance as well as the rate per hour. Staff can also manage the system in a simple and user-friendly manner. After logging into the system, member can view their booking status and make payments online. 

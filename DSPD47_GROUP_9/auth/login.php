@@ -100,7 +100,7 @@ $pageTitle = 'Login — FBS';
     </form>
 
     <p class="text-center mt-6 text-muted text-sm">
-      Don't have an account? <a href="/auth/register.php" class="text-accent font-medium">Register</a>
+      Don't have an account? <a href="/DSPD47_GROUP_9/auth/register.php" class="text-accent font-medium">Register</a>
     </p>
   </div>
 </div>

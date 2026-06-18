@@ -68,14 +68,14 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="card animate-in delay-4">
       <div class="card-header">
         <h2 class="font-semibold">Recent Bookings</h2>
-        <a href="/DSPD47_GROUP_1/member/facilities.php" class="btn btn-primary btn-sm">Browse Facilities</a>
+        <a href="/DSPD47_GROUP_9/member/facilities.php" class="btn btn-primary btn-sm">Browse Facilities</a>
       </div>
       <?php if (empty($recentBookings)): ?>
         <div class="empty-state">
           <div class="empty-state-icon">📅</div>
           <h3>No bookings yet</h3>
           <p>Start by browsing available facilities and make your first booking.</p>
-          <a href="/DSPD47_GROUP_1/member/facilities.php" class="btn btn-primary mt-4">Browse Facilities</a>
+          <a href="/DSPD47_GROUP_9/member/facilities.php" class="btn btn-primary mt-4">Browse Facilities</a>
         </div>
       <?php else: ?>
         <div class="table-wrap">
@@ -100,9 +100,9 @@ require_once __DIR__ . '/../includes/header.php';
                 <td><span class="badge badge-<?= strtolower($b['BookingStatus']) ?>"><?= $b['BookingStatus'] ?></span></td>
                 <td>
                   <div class="action-btns">
-                    <a href="/DSPD47_GROUP_1/member/facility_detail.php?id=<?= $b['BookingID'] ?>" class="action-btn view">View</a>
+                    <a href="/DSPD47_GROUP_9/member/facility_detail.php?id=<?= $b['BookingID'] ?>" class="action-btn view">View</a>
                     <?php if ($b['BookingStatus'] === 'Pending'): ?>
-                      <a href="/DSPD47_GROUP_1/member/mybookings.php?cancel=<?= $b['BookingID'] ?>" class="action-btn reject" data-confirm="Cancel this booking?">Cancel</a>
+                      <a href="/DSPD47_GROUP_9/member/mybookings.php?cancel=<?= $b['BookingID'] ?>" class="action-btn reject" data-confirm="Cancel this booking?">Cancel</a>
                     <?php endif; ?>
                   </div>
                 </td>

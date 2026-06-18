@@ -11,7 +11,7 @@ if (isset($_GET['delete'])) {
     $stmt = $pdo->prepare("DELETE FROM member WHERE MemberID = ?");
     $stmt->execute([$id]);
     $_SESSION['flash'] = ['type' => 'success', 'msg' => "Member #$id deleted."];
-    header('Location: /DSPD47_GROUP_1/staff/customers.php');
+    header('Location: /DSPD47_GROUP_9/staff/customers.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_member'])) {
     $stmt = $pdo->prepare("UPDATE member SET MemberName=?, MemberContactNo=?, MemberEmail=?, AccountStatus=? WHERE MemberID=?");
     $stmt->execute([$name, $contact, $email, $status, $id]);
     $_SESSION['flash'] = ['type' => 'success', 'msg' => "Member updated."];
-    header('Location: /DSPD47_GROUP_1/staff/customers.php');
+    header('Location: /DSPD47_GROUP_9/staff/customers.php');
     exit;
 }
 
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_member'])) {
         $stmt->execute([$name, $contact, $email, $username, $password]);
         $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Member added successfully.'];
     }
-    header('Location: /DSPD47_GROUP_1/staff/customers.php');
+    header('Location: /DSPD47_GROUP_9/staff/customers.php');
     exit;
 }
 
@@ -95,7 +95,7 @@ $current = 'customers';
                      value="<?= htmlspecialchars($search) ?>">
               <button type="submit" class="btn btn-primary btn-sm">Search</button>
               <?php if ($search): ?>
-                <a href="/DSPD47_GROUP_1/staff/customers.php" class="btn btn-ghost btn-sm">Clear</a>
+                <a href="/DSPD47_GROUP_9/staff/customers.php" class="btn btn-ghost btn-sm">Clear</a>
               <?php endif; ?>
             </form>
           </div>
@@ -130,7 +130,7 @@ $current = 'customers';
                   <td>
                     <div class="action-btns">
                       <button class="action-btn view" onclick="editMember(<?= $c['MemberID'] ?>, '<?= htmlspecialchars(addslashes($c['MemberName'])) ?>', '<?= htmlspecialchars(addslashes($c['MemberContactNo'])) ?>', '<?= htmlspecialchars(addslashes($c['MemberEmail'])) ?>', '<?= $c['AccountStatus'] ?>')">Edit</button>
-                      <a href="/DSPD47_GROUP_1/staff/customers.php?delete=<?= $c['MemberID'] ?>" class="action-btn reject" data-confirm="Delete <?= htmlspecialchars($c['MemberName']) ?>? All their bookings will be deleted.">Delete</a>
+                      <a href="/DSPD47_GROUP_9/staff/customers.php?delete=<?= $c['MemberID'] ?>" class="action-btn reject" data-confirm="Delete <?= htmlspecialchars($c['MemberName']) ?>? All their bookings will be deleted.">Delete</a>
                     </div>
                   </td>
                 </tr>

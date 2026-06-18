@@ -12,7 +12,7 @@ if (isset($_GET['delete'])) {
     $stmt = $pdo->prepare("DELETE FROM facility WHERE FacilityID = ?");
     $stmt->execute([$id]);
     $_SESSION['flash'] = ['type' => 'success', 'msg' => "Facility #$id deleted."];
-    header('Location: /DSPD47_GROUP_1/staff/facilities.php');
+    header('Location: /DSPD47_GROUP_9/staff/facilities.php');
     exit;
 }
 
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_facility'])) {
     $stmt = $pdo->prepare("UPDATE facility SET FacilityName=?, FacilityCategory=?, FacilityCapacity=?, FacilityDetail=?, RatePerHour=?, FacilityStatus=? WHERE FacilityID=?");
     $stmt->execute([$name, $category, $capacity, $detail, $rate, $status, $id]);
     $_SESSION['flash'] = ['type' => 'success', 'msg' => "Facility updated successfully."];
-    header('Location: /DSPD47_GROUP_1/staff/facilities.php');
+    header('Location: /DSPD47_GROUP_9/staff/facilities.php');
     exit;
 }
 
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_facility'])) {
     }
 
     $_SESSION['flash'] = ['type' => 'success', 'msg' => "Facility added successfully."];
-    header('Location: /DSPD47_GROUP_1/staff/facilities.php');
+    header('Location: /DSPD47_GROUP_9/staff/facilities.php');
     exit;
 }
 
@@ -193,7 +193,7 @@ $current = 'facilities';
           </select>
           <button type="submit" class="btn btn-primary">Search</button>
           <?php if ($search || $statusFilter || $categoryFilter): ?>
-            <a href="/DSPD47_GROUP_1/staff/facilities.php" class="btn btn-ghost">Clear</a>
+            <a href="/DSPD47_GROUP_9/staff/facilities.php" class="btn btn-ghost">Clear</a>
           <?php endif; ?>
         </form>
       </div>
@@ -216,7 +216,7 @@ $current = 'facilities';
         </div>
         <div class="flex gap-2">
           <span class="badge badge-<?= strtolower($f['FacilityStatus']) ?>"><?= $f['FacilityStatus'] ?></span>
-          <a href="/DSPD47_GROUP_1/staff/facilities.php?delete=<?= $f['FacilityID'] ?>" class="btn btn-sm btn-danger" data-confirm="Delete <?= htmlspecialchars($f['FacilityName']) ?>? This will also delete all schedules and bookings.">Delete</a>
+          <a href="/DSPD47_GROUP_9/staff/facilities.php?delete=<?= $f['FacilityID'] ?>" class="btn btn-sm btn-danger" data-confirm="Delete <?= htmlspecialchars($f['FacilityName']) ?>? This will also delete all schedules and bookings.">Delete</a>
         </div>
       </div>
       <div class="card-body">

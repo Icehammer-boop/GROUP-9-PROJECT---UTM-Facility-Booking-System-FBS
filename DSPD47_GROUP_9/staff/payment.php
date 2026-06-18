@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_payment'])) {
     $stmt = $pdo->prepare("UPDATE payment SET PaymentStatus = ?, ReceiptNumber = COALESCE(NULLIF(?, ''), ReceiptNumber), PaymentDate = CASE WHEN ? = 'Paid' THEN NOW() ELSE PaymentDate END WHERE PaymentID = ?");
     $stmt->execute([$newStatus, $receiptNumber, $newStatus, $paymentId]);
     $_SESSION['flash'] = ['type' => 'success', 'msg' => "Payment #$paymentId updated to $newStatus."];
-    header('Location: /DSPD47_GROUP_1/staff/payment.php');
+    header('Location: /DSPD47_GROUP_9/staff/payment.php');
     exit;
 }
 
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_payment'])) {
     $stmt = $pdo->prepare("INSERT INTO payment (PaymentAmount, PaymentMethod, PaymentStatus, BookingID) VALUES (?, ?, 'Pending', ?)");
     $stmt->execute([$amount, $method, $bookingId]);
     $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Payment record created.'];
-    header('Location: /DSPD47_GROUP_1/staff/payment.php');
+    header('Location: /DSPD47_GROUP_9/staff/payment.php');
     exit;
 }
 
@@ -144,9 +144,9 @@ $current = 'payment';
 
     <!-- Filter -->
     <div class="filter-bar">
-      <a href="/DSPD47_GROUP_1/staff/payment.php" class="btn <?= !$statusFilter ? 'btn-dark' : 'btn-outline' ?> btn-sm">All</a>
+      <a href="/DSPD47_GROUP_9/staff/payment.php" class="btn <?= !$statusFilter ? 'btn-dark' : 'btn-outline' ?> btn-sm">All</a>
       <?php foreach (['Pending', 'Paid', 'Failed', 'Refunded'] as $s): ?>
-        <a href="/DSPD47_GROUP_1/staff/payment.php?status=<?= $s ?>" class="btn <?= $statusFilter === $s ? 'btn-dark' : 'btn-outline' ?> btn-sm"><?= $s ?></a>
+        <a href="/DSPD47_GROUP_9/staff/payment.php?status=<?= $s ?>" class="btn <?= $statusFilter === $s ? 'btn-dark' : 'btn-outline' ?> btn-sm"><?= $s ?></a>
       <?php endforeach; ?>
     </div>
 

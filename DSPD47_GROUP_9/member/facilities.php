@@ -53,7 +53,7 @@ require_once __DIR__ . '/../includes/header.php';
       </select>
       <button type="submit" class="btn btn-primary">Search</button>
       <?php if ($search || $category): ?>
-        <a href="/DSPD47_GROUP_1/member/facilities.php" class="btn btn-ghost">Clear</a>
+        <a href="/DSPD47_GROUP_9/member/facilities.php" class="btn btn-ghost">Clear</a>
       <?php endif; ?>
     </form>
 
@@ -79,7 +79,7 @@ require_once __DIR__ . '/../includes/header.php';
               <span class="facility-card-price">RM <?= number_format($f['RatePerHour'], 2) ?>/hr</span>
               <span class="badge badge-<?= strtolower($f['FacilityStatus']) ?>"><?= $f['FacilityStatus'] ?></span>
             </div>
-            <a href="/DSPD47_GROUP_1/member/facility_detail.php?id=<?= $f['FacilityID'] ?>" class="btn btn-primary btn-block mt-4">View Details</a>
+            <a href="/DSPD47_GROUP_9/member/facility_detail.php?id=<?= $f['FacilityID'] ?>" class="btn btn-primary btn-block mt-4">View Details</a>
           </div>
         </div>
         <?php endforeach; ?>

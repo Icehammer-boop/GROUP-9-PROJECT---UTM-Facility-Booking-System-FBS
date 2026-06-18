@@ -4,7 +4,7 @@ require_once __DIR__ . '/../includes/session.php';
 requireMember();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /DSPD47_GROUP_1/member/facilities.php');
+    header('Location: /DSPD47_GROUP_9/member/facilities.php');
     exit;
 }
 
@@ -18,19 +18,19 @@ $memberId = $_SESSION['user_id'];
 // Validation
 if (!$facilityId || !$bookingDate || !$startTime || !$endTime || !$purpose) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Please fill in all booking fields.'];
-    header('Location: /DSPD47_GROUP_1/member/facility_detail.php?id=' . $facilityId);
+    header('Location: /DSPD47_GROUP_9/member/facility_detail.php?id=' . $facilityId);
     exit;
 }
 
 if ($bookingDate < date('Y-m-d')) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Booking date cannot be in the past.'];
-    header('Location: /DSPD47_GROUP_1/member/facility_detail.php?id=' . $facilityId);
+    header('Location: /DSPD47_GROUP_9/member/facility_detail.php?id=' . $facilityId);
     exit;
 }
 
 if ($endTime <= $startTime) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'End time must be after start time.'];
-    header('Location: /DSPD47_GROUP_1/member/facility_detail.php?id=' . $facilityId);
+    header('Location: /DSPD47_GROUP_9/member/facility_detail.php?id=' . $facilityId);
     exit;
 }
 
@@ -41,7 +41,7 @@ $facility = $stmt->fetch();
 
 if (!$facility) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'This facility is not available for booking.'];
-    header('Location: /DSPD47_GROUP_1/member/facilities.php');
+    header('Location: /DSPD47_GROUP_9/member/facilities.php');
     exit;
 }
 
@@ -59,7 +59,7 @@ $stmt = $pdo->prepare("
 $stmt->execute([$facilityId, $bookingDate, $endTime, $startTime, $endTime, $startTime, $startTime, $endTime]);
 if ($stmt->fetchColumn() > 0) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'This time slot is already booked. Please choose a different time.'];
-    header('Location: /DSPD47_GROUP_1/member/facility_detail.php?id=' . $facilityId);
+    header('Location: /DSPD47_GROUP_9/member/facility_detail.php?id=' . $facilityId);
     exit;
 }
 
@@ -88,11 +88,11 @@ try {
     $pdo->commit();
 
     $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Booking submitted successfully! Your booking is pending approval.'];
-    header('Location: /DSPD47_GROUP_1/member/mybookings.php');
+    header('Location: /DSPD47_GROUP_9/member/mybookings.php');
     exit;
 } catch (Exception $e) {
     $pdo->rollBack();
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'An error occurred. Please try again.'];
-    header('Location: /DSPD47_GROUP_1/member/facility_detail.php?id=' . $facilityId);
+    header('Location: /DSPD47_GROUP_9/member/facility_detail.php?id=' . $facilityId);
     exit;
 }

@@ -24,7 +24,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         $stmt->execute([$staffId, $bookingId]);
         $_SESSION['flash'] = ['type' => 'success', 'msg' => "Booking #$bookingId marked as completed."];
     }
-    header('Location: /DSPD47_GROUP_1/staff/bookings.php' . (isset($_GET['status']) ? '?status=' . $_GET['status'] : ''));
+    header('Location: /DSPD47_GROUP_9/staff/bookings.php' . (isset($_GET['status']) ? '?status=' . $_GET['status'] : ''));
     exit;
 }
 
@@ -74,9 +74,9 @@ $current = 'bookings';
     </div>
 
     <div class="filter-bar">
-      <a href="/DSPD47_GROUP_1/staff/bookings.php" class="btn <?= !$statusFilter ? 'btn-dark' : 'btn-outline' ?> btn-sm">All</a>
+      <a href="/DSPD47_GROUP_9/staff/bookings.php" class="btn <?= !$statusFilter ? 'btn-dark' : 'btn-outline' ?> btn-sm">All</a>
       <?php foreach (['Pending', 'Approved', 'Completed', 'Cancelled', 'Rejected'] as $s): ?>
-        <a href="/DSPD47_GROUP_1/staff/bookings.php?status=<?= $s ?>" class="btn <?= $statusFilter === $s ? 'btn-dark' : 'btn-outline' ?> btn-sm"><?= $s ?></a>
+        <a href="/DSPD47_GROUP_9/staff/bookings.php?status=<?= $s ?>" class="btn <?= $statusFilter === $s ? 'btn-dark' : 'btn-outline' ?> btn-sm"><?= $s ?></a>
       <?php endforeach; ?>
       <select name="facility" class="form-select" style="width:auto;min-width:160px;" onchange="window.location='?facility='+this.value<?= $statusFilter ? "+'&status=$statusFilter'" : '' ?>">
         <option value="0">All Facilities</option>
@@ -130,11 +130,11 @@ $current = 'bookings';
               <td>
                 <div class="action-btns">
                   <?php if ($b['BookingStatus'] === 'Pending'): ?>
-                    <a href="/DSPD47_GROUP_1/staff/bookings.php?action=approve&id=<?= $b['BookingID'] ?><?= $statusFilter ? '&status='.$statusFilter : '' ?>" class="action-btn approve" data-confirm="Approve booking #<?= $b['BookingID'] ?>?">Approve</a>
-                    <a href="/DSPD47_GROUP_1/staff/bookings.php?action=reject&id=<?= $b['BookingID'] ?><?= $statusFilter ? '&status='.$statusFilter : '' ?>" class="action-btn reject" data-confirm="Reject booking #<?= $b['BookingID'] ?>?">Reject</a>
+                    <a href="/DSPD47_GROUP_9/staff/bookings.php?action=approve&id=<?= $b['BookingID'] ?><?= $statusFilter ? '&status='.$statusFilter : '' ?>" class="action-btn approve" data-confirm="Approve booking #<?= $b['BookingID'] ?>?">Approve</a>
+                    <a href="/DSPD47_GROUP_9/staff/bookings.php?action=reject&id=<?= $b['BookingID'] ?><?= $statusFilter ? '&status='.$statusFilter : '' ?>" class="action-btn reject" data-confirm="Reject booking #<?= $b['BookingID'] ?>?">Reject</a>
                   <?php endif; ?>
                   <?php if ($b['BookingStatus'] === 'Approved'): ?>
-                    <a href="/DSPD47_GROUP_1/staff/bookings.php?action=complete&id=<?= $b['BookingID'] ?><?= $statusFilter ? '&status='.$statusFilter : '' ?>" class="action-btn approve" data-confirm="Mark booking #<?= $b['BookingID'] ?> as completed?">Complete</a>
+                    <a href="/DSPD47_GROUP_9/staff/bookings.php?action=complete&id=<?= $b['BookingID'] ?><?= $statusFilter ? '&status='.$statusFilter : '' ?>" class="action-btn approve" data-confirm="Mark booking #<?= $b['BookingID'] ?> as completed?">Complete</a>
                   <?php endif; ?>
                 </div>
               </td>

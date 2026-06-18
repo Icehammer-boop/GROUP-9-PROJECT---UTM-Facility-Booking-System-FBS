@@ -67,7 +67,7 @@ $current = 'dashboard';
     <div class="card animate-in delay-3">
       <div class="card-header">
         <h2 class="font-semibold">Recent Bookings</h2>
-        <a href="/DSPD47_GROUP_1/staff/bookings.php" class="btn btn-outline btn-sm">View All</a>
+        <a href="/DSPD47_GROUP_9/staff/bookings.php" class="btn btn-outline btn-sm">View All</a>
       </div>
       <div class="table-wrap">
         <table>

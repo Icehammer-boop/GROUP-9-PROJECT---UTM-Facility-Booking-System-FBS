@@ -8,7 +8,7 @@ $memberId = $_SESSION['user_id'];
 
 $paymentId = intval($_GET['payment_id'] ?? 0);
 if (!$paymentId) {
-    header('Location: /DSPD47_GROUP_1/member/mybookings.php');
+    header('Location: /DSPD47_GROUP_9/member/mybookings.php');
     exit;
 }
 
@@ -27,7 +27,7 @@ $receipt = $stmt->fetch();
 
 if (!$receipt) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Receipt not found.'];
-    header('Location: /DSPD47_GROUP_1/member/mybookings.php');
+    header('Location: /DSPD47_GROUP_9/member/mybookings.php');
     exit;
 }
 

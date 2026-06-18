@@ -15,7 +15,7 @@ $member = $stmt->fetch();
 
 if (!$member) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Member not found.'];
-    header('Location: /DSPD47_GROUP_1/member/dashboard.php');
+    header('Location: /DSPD47_GROUP_9/member/dashboard.php');
     exit;
 }
 

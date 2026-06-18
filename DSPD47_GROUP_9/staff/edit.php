@@ -15,7 +15,7 @@ $staff = $stmt->fetch();
 
 if (!$staff) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Staff not found.'];
-    header('Location: /DSPD47_GROUP_1/staff/dashboard.php');
+    header('Location: /DSPD47_GROUP_9/staff/dashboard.php');
     exit;
 }
 

@@ -17,7 +17,7 @@ if (isset($_GET['cancel'])) {
         $stmt->execute([$bookingId]);
         $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Booking #'.$bookingId.' has been cancelled.'];
     }
-    header('Location: /DSPD47_GROUP_1/member/mybookings.php');
+    header('Location: /DSPD47_GROUP_9/member/mybookings.php');
     exit;
 }
 
@@ -56,12 +56,12 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 
     <div class="filter-bar">
-      <a href="/DSPD47_GROUP_1/member/mybookings.php" class="btn <?= !$statusFilter ? 'btn-dark' : 'btn-outline' ?> btn-sm">All</a>
+      <a href="/DSPD47_GROUP_9/member/mybookings.php" class="btn <?= !$statusFilter ? 'btn-dark' : 'btn-outline' ?> btn-sm">All</a>
       <?php foreach (['Pending', 'Approved', 'Completed', 'Cancelled', 'Rejected'] as $s): ?>
-        <a href="/DSPD47_GROUP_1/member/mybookings.php?status=<?= $s ?>" class="btn <?= $statusFilter === $s ? 'btn-dark' : 'btn-outline' ?> btn-sm"><?= $s ?></a>
+        <a href="/DSPD47_GROUP_9/member/mybookings.php?status=<?= $s ?>" class="btn <?= $statusFilter === $s ? 'btn-dark' : 'btn-outline' ?> btn-sm"><?= $s ?></a>
       <?php endforeach; ?>
       <div style="flex:1"></div>
-      <a href="/DSPD47_GROUP_1/member/facilities.php" class="btn btn-primary btn-sm">+ New Booking</a>
+      <a href="/DSPD47_GROUP_9/member/facilities.php" class="btn btn-primary btn-sm">+ New Booking</a>
     </div>
 
     <?php if (empty($bookings)): ?>
@@ -69,7 +69,7 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="empty-state-icon">📅</div>
         <h3>No bookings found</h3>
         <p><?= $statusFilter ? "You don't have any $statusFilter bookings." : "You haven't made any bookings yet." ?></p>
-        <a href="/DSPD47_GROUP_1/member/facilities.php" class="btn btn-primary mt-4">Browse Facilities</a>
+        <a href="/DSPD47_GROUP_9/member/facilities.php" class="btn btn-primary mt-4">Browse Facilities</a>
       </div>
     <?php else: ?>
       <div class="table-wrap">
@@ -108,7 +108,7 @@ require_once __DIR__ . '/../includes/header.php';
                   <span class="badge badge-paid">Paid</span>
                 <?php elseif ($b['PaymentStatus'] === 'Pending' || $b['PaymentStatus'] === null): ?>
                   <?php if ($b['BookingStatus'] === 'Approved' || $b['BookingStatus'] === 'Completed'): ?>
-                    <a href="/DSPD47_GROUP_1/member/payment.php?booking_id=<?= $b['BookingID'] ?>" class="btn btn-sm btn-primary">Pay</a>
+                    <a href="/DSPD47_GROUP_9/member/payment.php?booking_id=<?= $b['BookingID'] ?>" class="btn btn-sm btn-primary">Pay</a>
                   <?php else: ?>
                     <span class="text-muted text-xs">—</span>
                   <?php endif; ?>
@@ -119,10 +119,10 @@ require_once __DIR__ . '/../includes/header.php';
               <td>
                 <div class="action-btns">
                   <?php if ($b['BookingStatus'] === 'Pending'): ?>
-                    <a href="/DSPD47_GROUP_1/member/mybookings.php?cancel=<?= $b['BookingID'] ?>" class="action-btn reject" data-confirm="Cancel booking #<?= $b['BookingID'] ?>?">Cancel</a>
+                    <a href="/DSPD47_GROUP_9/member/mybookings.php?cancel=<?= $b['BookingID'] ?>" class="action-btn reject" data-confirm="Cancel booking #<?= $b['BookingID'] ?>?">Cancel</a>
                   <?php endif; ?>
                   <?php if ($b['PaymentStatus'] === 'Paid' && $b['ReceiptNumber']): ?>
-                    <a href="/DSPD47_GROUP_1/member/receipt.php?payment_id=<?= $b['PaymentID'] ?>" class="action-btn view">Receipt</a>
+                    <a href="/DSPD47_GROUP_9/member/receipt.php?payment_id=<?= $b['PaymentID'] ?>" class="action-btn view">Receipt</a>
                   <?php endif; ?>
                 </div>
               </td>

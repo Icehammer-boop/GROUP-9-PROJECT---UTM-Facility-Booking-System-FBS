@@ -46,12 +46,12 @@ $pageTitle = 'Staff Registration — FBS';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $pageTitle ?></title>
-  <link rel="stylesheet" href="/DSPD47_GROUP_1/assets/css/style.css">
+  <link rel="stylesheet" href="/DSPD47_GROUP_9/assets/css/style.css">
 </head>
 <body>
 <div class="auth-wrapper">
   <div class="auth-card animate-in">
-    <a href="/DSPD47_GROUP_1/" class="logo">
+    <a href="/DSPD47_GROUP_9/" class="logo">
       <span class="logo-dot"></span>
       UTM Facility Booking System
     </a>
@@ -64,7 +64,7 @@ $pageTitle = 'Staff Registration — FBS';
     <?php if ($success): ?>
       <div class="alert alert-success">
         <?= htmlspecialchars($success) ?>
-        <a href="/DSPD47_GROUP_1/auth/login.php" class="text-accent font-medium" style="margin-left:0.5rem;">Sign in →</a>
+        <a href="/DSPD47_GROUP_9/auth/login.php" class="text-accent font-medium" style="margin-left:0.5rem;">Sign in →</a>
       </div>
     <?php endif; ?>
 
@@ -124,10 +124,10 @@ $pageTitle = 'Staff Registration — FBS';
     </form>
 
     <p class="text-center mt-6 text-muted text-sm">
-      Already have an account? <a href="/DSPD47_GROUP_1/auth/login.php" class="text-accent font-medium">Sign in</a>
+      Already have an account? <a href="/DSPD47_GROUP_9/auth/login.php" class="text-accent font-medium">Sign in</a>
     </p>
   </div>
 </div>
-<script src="/DSPD47_GROUP_1/assets/js/main.js"></script>
+<script src="/DSPD47_GROUP_9/assets/js/main.js"></script>
 </body>
 </html>

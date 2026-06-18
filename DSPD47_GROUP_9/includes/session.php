@@ -25,7 +25,7 @@ function isManager() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /DSPD47_GROUP_1/auth/login.php');
+        header('Location: /DSPD47_GROUP_9/auth/login.php');
         exit;
     }
 }
@@ -33,7 +33,7 @@ function requireLogin() {
 function requireMember() {
     requireLogin();
     if (!isMember()) {
-        header('Location: /DSPD47_GROUP_1/staff/dashboard.php');
+        header('Location: /DSPD47_GROUP_9/staff/dashboard.php');
         exit;
     }
 }
@@ -41,7 +41,7 @@ function requireMember() {
 function requireStaff() {
     requireLogin();
     if (!isStaff()) {
-        header('Location: /DSPD47_GROUP_1/member/dashboard.php');
+        header('Location: /DSPD47_GROUP_9/member/dashboard.php');
         exit;
     }
 }
@@ -49,9 +49,9 @@ function requireStaff() {
 function redirectIfLoggedIn() {
     if (isLoggedIn()) {
         if (isMember()) {
-            header('Location: /DSPD47_GROUP_1/member/dashboard.php');
+            header('Location: /DSPD47_GROUP_9/member/dashboard.php');
         } else {
-            header('Location: /DSPD47_GROUP_1/staff/dashboard.php');
+            header('Location: /DSPD47_GROUP_9/staff/dashboard.php');
         }
         exit;
     }

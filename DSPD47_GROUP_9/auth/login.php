@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_id'] = $user['MemberID'];
                 $_SESSION['user_name'] = $user['MemberName'];
                 $_SESSION['user_type'] = 'member';
-                header('Location: /DSPD47_GROUP_1/member/dashboard.php');
+                header('Location: /DSPD47_GROUP_9/member/dashboard.php');
                 exit;
             } else {
                 $error = 'Invalid username or password.';
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_name'] = $user['StaffName'];
                 $_SESSION['user_type'] = 'staff';
                 $_SESSION['staff_role'] = $user['StaffRole'];
-                header('Location: /DSPD47_GROUP_1/staff/dashboard.php');
+                header('Location: /DSPD47_GROUP_9/staff/dashboard.php');
                 exit;
             } else {
                 $error = 'Invalid username or password.';
@@ -55,12 +55,12 @@ $pageTitle = 'Login — FBS';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $pageTitle ?></title>
-  <link rel="stylesheet" href="/DSPD47_GROUP_1/assets/css/style.css">
+  <link rel="stylesheet" href="/DSPD47_GROUP_9/assets/css/style.css">
 </head>
 <body>
 <div class="auth-wrapper">
   <div class="auth-card animate-in">
-    <a href="/DSPD47_GROUP_1/" class="logo">
+    <a href="/DSPD47_GROUP_9/" class="logo">
       <span class="logo-dot"></span>
       UTM Facility Booking System
     </a>
@@ -100,10 +100,10 @@ $pageTitle = 'Login — FBS';
     </form>
 
     <p class="text-center mt-6 text-muted text-sm">
-      Don't have an account? <a href="/DSPD47_GROUP_1/auth/register.php" class="text-accent font-medium">Register</a>
+      Don't have an account? <a href="/auth/register.php" class="text-accent font-medium">Register</a>
     </p>
   </div>
 </div>
-<script src="/DSPD47_GROUP_1/assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

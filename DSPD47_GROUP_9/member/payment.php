@@ -8,7 +8,7 @@ $memberId = $_SESSION['user_id'];
 
 $bookingId = intval($_GET['booking_id'] ?? ($_POST['booking_id'] ?? 0));
 if (!$bookingId) {
-    header('Location: /DSPD47_GROUP_1/member/mybookings.php');
+    header('Location: /DSPD47_GROUP_9/member/mybookings.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ $booking = $stmt->fetch();
 
 if (!$booking) {
     $_SESSION['flash'] = ['type' => 'error', 'msg' => 'Booking not found.'];
-    header('Location: /DSPD47_GROUP_1/member/mybookings.php');
+    header('Location: /DSPD47_GROUP_9/member/mybookings.php');
     exit;
 }
 
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $booking['PaymentStatus'] !== 'Paid
     }
 
     $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Payment successful! Receipt: ' . $receiptNumber];
-    header('Location: /DSPD47_GROUP_1/member/mybookings.php');
+    header('Location: /DSPD47_GROUP_9/member/mybookings.php');
     exit;
 }
 
@@ -124,7 +124,7 @@ require_once __DIR__ . '/../includes/header.php';
         <?php if ($booking['PaymentStatus'] === 'Paid'): ?>
           <div class="alert alert-success">
             ✅ Payment completed — Receipt: <strong class="font-mono"><?= htmlspecialchars($booking['ReceiptNumber']) ?></strong>
-            <a href="/DSPD47_GROUP_1/member/receipt.php?payment_id=<?= $booking['PaymentID'] ?>" class="btn btn-sm btn-outline mt-2">View Receipt</a>
+            <a href="/DSPD47_GROUP_9/member/receipt.php?payment_id=<?= $booking['PaymentID'] ?>" class="btn btn-sm btn-outline mt-2">View Receipt</a>
           </div>
         <?php else: ?>
           <div class="card">

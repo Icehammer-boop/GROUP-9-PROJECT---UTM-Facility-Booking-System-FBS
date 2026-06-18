@@ -7,7 +7,7 @@ $pageTitle = 'Facility Details — FBS';
 
 $facilityId = intval($_GET['id'] ?? 0);
 if (!$facilityId) {
-    header('Location: /DSPD47_GROUP_1/member/facilities.php');
+    header('Location: /DSPD47_GROUP_9/member/facilities.php');
     exit;
 }
 
@@ -17,7 +17,7 @@ $stmt->execute([$facilityId]);
 $facility = $stmt->fetch();
 
 if (!$facility) {
-    header('Location: /DSPD47_GROUP_1/member/facilities.php');
+    header('Location: /DSPD47_GROUP_9/member/facilities.php');
     exit;
 }
 
@@ -45,7 +45,7 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="page-wrapper">
   <div class="container">
     <div class="page-header">
-      <a href="/DSPD47_GROUP_1/member/facilities.php" class="btn btn-ghost btn-sm mb-4">← Back to Facilities</a>
+      <a href="/DSPD47_GROUP_9/member/facilities.php" class="btn btn-ghost btn-sm mb-4">← Back to Facilities</a>
     </div>
 
     <div class="detail-grid">
@@ -128,7 +128,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <?php if ($b['PaymentStatus'] === 'Paid'): ?>
                       <span class="badge badge-paid">Paid</span>
                     <?php elseif ($b['PaymentStatus'] === 'Pending'): ?>
-                      <a href="/DSPD47_GROUP_1/member/payment.php?booking_id=<?= $b['BookingID'] ?>" class="btn btn-sm btn-primary">Pay Now</a>
+                      <a href="/DSPD47_GROUP_9/member/payment.php?booking_id=<?= $b['BookingID'] ?>" class="btn btn-sm btn-primary">Pay Now</a>
                     <?php else: ?>
                       <span class="badge badge-<?= strtolower($b['PaymentStatus'] ?? 'pending') ?>"><?= $b['PaymentStatus'] ?? 'Pending' ?></span>
                     <?php endif; ?>
@@ -151,7 +151,7 @@ require_once __DIR__ . '/../includes/header.php';
             <?php if ($facility['FacilityStatus'] !== 'Available'): ?>
               <div class="alert alert-warning">This facility is currently not available for booking.</div>
             <?php else: ?>
-              <form method="POST" action="/DSPD47_GROUP_1/member/booking.php">
+              <form method="POST" action="/DSPD47_GROUP_9/member/booking.php">
                 <input type="hidden" name="facility_id" value="<?= $facilityId ?>">
 
                 <div class="form-group">
